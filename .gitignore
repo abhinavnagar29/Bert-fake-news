@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+results/*
+!results/figures/
+!results/figures/*.png
+!results/*.csv
+*.pt
+*.bin
+checkpoint/
+fine_tuned_bert/
+.ipynb_checkpoints/
+.DS_Store

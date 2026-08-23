@@ -1,0 +1,24 @@
+# Core
+torch>=2.1
+transformers==4.41.2
+datasets
+
+# Data / ML
+numpy
+pandas
+scikit-learn
+scipy
+
+# Interpretability
+captum
+
+# Plotting
+matplotlib
+seaborn
+tabulate
+
+# Demo
+gradio
+
+# Dev / testing
+pytest
