@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Data and models
+data/
+*.pt
+*.bin
+checkpoint/
+fine_tuned_bert/
+
+# Results (keep figures for documentation)
+results/*
+!results/figures/
+!results/figures/*.png
+!results/*.csv
+
+# Notebooks and development files (not needed for Streamlit deployment)
+*.ipynb
+.ipynb_checkpoints/
+notebooks/
+src/
+tests/
+scripts/
+configs/
+train.py
+pytest.ini
+
+# Extra documentation (keep only README for GitHub)
+FINAL_REPORT.md
+NEXT_STEPS.md
+MODEL_CARD.md
+
+# OS
+.DS_Store

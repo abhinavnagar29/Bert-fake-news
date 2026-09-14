@@ -1,0 +1,10 @@
+# Minimal dependency set for deploying app/streamlit_app.py to Streamlit
+# Community Cloud. In the app's "Advanced settings", set
+# "Requirements file path" to app/requirements.txt (root requirements.txt
+# is for the research/training environment and pulls in torch's full CUDA
+# build, captum, matplotlib, etc. -- unnecessary weight for a CPU-only demo
+# that only loads a model and runs inference).
+streamlit==1.37.0
+torch==2.3.1
+transformers==4.41.2
+huggingface_hub==0.23.4
