@@ -16,5 +16,9 @@ results/*
 !results/figures/*.png
 !results/*.csv
 
+# Documentation (exclude detailed reports)
+FINAL_REPORT.md
+NEXT_STEPS.md
+
 # OS
 .DS_Store

@@ -35,7 +35,7 @@ findings changed what shipped:
 1. **`src/data/preprocess.py` and `src/data/dataset.py` were missing from the committed repository.** They
    existed only inside `BERT_Fake_News_Full_Pipeline.ipynb`'s `%%writefile` cells and were never `git add`ed,
    which meant every documented CLI command (`train.py`, `scripts/run_*.sh`) and two of the 42 test files
-   failed with `ModuleNotFoundError` as checked in. Restored — see `NEXT_STEPS.md` Section 3.
+   failed with `ModuleNotFoundError` as checked in. Restored.
 2. **No validation split existed anywhere** — only train/test. The test set was evaluated every epoch inside
    the training loop, and final numbers came from whichever epoch ran last, not a principled best-checkpoint
    choice. `src/training/train_transformer.py` now does a genuine train/validation/test split, selects the
@@ -47,7 +47,7 @@ findings changed what shipped:
 Everything below the "Key Results" section that predates this audit — the 4-model comparison, multi-seed
 table, data-scaling ablation, architecture, and error analysis — was left as-is: it was already measured
 correctly and its conclusions (e.g. "BERT-base and DistilBERT are statistically indistinguishable here") were
-already appropriately cautious. See `NEXT_STEPS.md` for the full list.
+already appropriately cautious.
 
 ## Key Results (original 4-model comparison)
 
@@ -126,9 +126,7 @@ train / 500 validation / 1,000 test.
   existing repo name; Hugging Face repo IDs aren't renamed automatically by a project rebrand. To rename it to
   match "NewsGauge," either use the "Rename" option on the model's Settings page on huggingface.co, or run
   `HfApi().move_repo(from_id="abhinav-29/fakeddit-bert-fake-news", to_id="your-username/newsgauge", repo_type="model")`)
-- **Live demo**: deployed via Streamlit Community Cloud — see `NEXT_STEPS.md` Section 9. (Hugging Face Spaces'
-  Gradio/Docker SDKs now require a paid plan even on free CPU hardware; Static Spaces are free but can't run
-  a Python backend, so Streamlit Community Cloud is the free deployment path here.)
+- **Live demo**: deployed via Streamlit Community Cloud.
 - **A real finding worth flagging, not hiding**: the mandatory save→reload→predict verification step found the
   deployed model predicts "real" with >95% confidence for an empty string and a garbage repeated-character
   string, and "fake" for a plain, unremarkable headline. See `MODEL_CARD.md` Limitations for the full note —
@@ -220,8 +218,7 @@ newsgauge/
 │   └── requirements.txt     # lightweight pinned deps for Streamlit Community Cloud
 ├── results/                 # figures + metrics, from both the original notebook and train_final_model.ipynb
 ├── MODEL_CARD.md            # Hugging Face model card (filled in from the 2026-09-11 training run)
-├── requirements.txt          # research/training environment
-└── NEXT_STEPS.md             # environment setup, data download, and exact reproduction/deploy commands
+└── requirements.txt          # research/training environment
 ```
 
 ## Reproducibility
@@ -234,8 +231,7 @@ python -m pytest tests/ -v
 
 Reproducing the trained-model results needs a GPU (Colab/Kaggle T4 is enough) and the Fakeddit dataset. All
 seeds are fixed and passed explicitly (`--seed`, default 42; multi-seed run uses 42/1/7) via
-`src/utils/seed.py`. Full step-by-step commands — including how to get the data, train the final model,
-upload to Hugging Face, and deploy the Streamlit app — are in **[NEXT_STEPS.md](NEXT_STEPS.md)**.
+`src/utils/seed.py`.
 
 ## Limitations
 
