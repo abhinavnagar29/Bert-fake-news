@@ -1,0 +1,13 @@
+model_name: bert-base-uncased
+max_len: 64
+batch_size: 32
+epochs: 4
+lr: 2.0e-5
+weight_decay: 0.01
+warmup_ratio: 0.1
+n_per_class: 2500
+seed: 42
+
+# Run with:
+#   python -m src.training.train_transformer --data_dir data/fakeddit \
+#     --model_name bert-base-uncased --out_dir results/bert_base --save_model

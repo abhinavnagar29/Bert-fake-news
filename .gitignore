@@ -16,21 +16,5 @@ results/*
 !results/figures/*.png
 !results/*.csv
 
-# Notebooks and development files (not needed for Streamlit deployment)
-*.ipynb
-.ipynb_checkpoints/
-notebooks/
-src/
-tests/
-scripts/
-configs/
-train.py
-pytest.ini
-
-# Extra documentation (keep only README for GitHub)
-FINAL_REPORT.md
-NEXT_STEPS.md
-MODEL_CARD.md
-
 # OS
 .DS_Store

@@ -1,0 +1,29 @@
+# Research / training environment (GPU recommended). For the lightweight
+# Streamlit Community Cloud deployment, use app/requirements.txt instead --
+# see NEXT_STEPS.md, Step 7.
+
+# Core
+torch==2.3.1
+transformers==4.41.2
+datasets==2.19.1
+
+# Data / ML
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.0
+scipy==1.13.1
+
+# Interpretability
+captum==0.7.0
+
+# Plotting
+matplotlib==3.9.0
+seaborn==0.13.2
+tabulate==0.9.0
+
+# Demo (for local Streamlit testing; deployment uses app/requirements.txt)
+streamlit==1.37.0
+huggingface_hub==0.23.4
+
+# Dev / testing
+pytest==8.2.2

@@ -1,0 +1,15 @@
+# Task 1 architecture, trained end-to-end on Fakeddit (not just shape-checked).
+model_name: scratch_bert
+embed_dim: 512
+num_heads: 8
+num_layers: 2
+max_len: 64
+batch_size: 32
+epochs: 6
+lr: 1.0e-4
+n_per_class: 2500
+seed: 42
+
+# Run with:
+#   python -m src.training.train_scratch --data_dir data/fakeddit --out_dir results/scratch_bert \
+#     --embed_dim 512 --num_heads 8 --num_layers 2 --epochs 6 --lr 1e-4
